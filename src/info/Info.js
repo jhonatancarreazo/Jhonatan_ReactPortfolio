@@ -41,7 +41,7 @@ export const info = {
         },
         {
             emoji: '🌎',
-            text: 'based in the Colombia'
+            text: 'based in Colombia'
         },
         
         {
