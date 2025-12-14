@@ -27,10 +27,10 @@ of what each of the values mean.
  */
 
 export const info = {
-    firstName: "John",
-    lastName: "Smith",
-    initials: "js", // the example uses first and last, but feel free to use three or more if you like.
-    position: "a Full Stack Developer",
+    firstName: "Jhonatan",
+    lastName: "Carreazo",
+    initials: "JC", // the example uses first and last, but feel free to use three or more if you like.
+    position: "Fronted web Developer",
     selfPortrait: self, // don't change this unless you want to name your self-portrait in the "img" folder something else!
     gradient: `-webkit-linear-gradient(135deg, ${colors})`, // don't change this either
     baseColor: colors[0],
@@ -41,62 +41,42 @@ export const info = {
         },
         {
             emoji: '🌎',
-            text: 'based in the US'
+            text: 'based in the Colombia'
         },
-        {
-            emoji: "💼",
-            text: "Systems Engineer at Google"
-        },
+        
         {
             emoji: "📧",
-            text: "johnsmith@gmail.com"
+            text: "jhonatan.carreazoa@gmail.com"
         }
     ],
     socials: [
+       
         {
-            link: "https://facebook.com",
-            icon: 'fa fa-facebook',
-            label: 'facebook'
-        },
-        {
-            link: "https://instagram.com",
-            icon: 'fa fa-instagram',
-            label: 'instagram'
-        },
-        {
-            link: "https://github.com",
+            link: "https://github.com/jhonatancarreazo",
             icon: "fa fa-github",
             label: 'github'
         },
         {
-            link: "https://linkedin.com",
+            link: "https://www.linkedin.com/in/jhonatancarreazo/",
             icon: "fa fa-linkedin",
             label: 'linkedin'
         },
-        {
-            link: "https://twitter.com",
-            icon: "fa fa-twitter",
-            label: 'twitter'
-        }
+        
 // Feel free to remove any of these that you don't have. I'll write an FAQ on how to add new ones later, let me know if you have a request for an icon!
 // Just change the links so that they lead to your social profiles.
 
     ],
-    bio: "Hello! I'm John. I'm a systems engineer for Google. I studied CompSci at Harvard, I enjoy long walks on the beach, and I believe artificial intelligence will inevitably rule us all one day. You should hire me!",
+    bio: "Hello! I’m Jhonatan Carreazo, a Frontend Web Developer focused on building modern, responsive, and user-friendly web applications.",
     skills:
         {
             proficientWith: ['javascript', 'react', 'git', 'github', 'bootstrap', 'html5', 'css3', 'figma'],
-            exposedTo: ['nodejs', 'python', 'adobe illustrator']
+            exposedTo: ['nodejs', 'python']
         }
     ,
     hobbies: [
         {
             label: 'reading',
             emoji: '📖'
-        },
-        {
-            label: 'theater',
-            emoji: '🎭'
         },
         {
             label: 'movies',
@@ -111,21 +91,21 @@ export const info = {
     ],
     portfolio: [ // This is where your portfolio projects will be detailed
         {
-            title: "Project 1",
+            title: "Estilo Moi",
             live: "https://paytonpierce.dev", //this should be a link to the live version of your project, think github pages, netlify, heroku, etc. Or your own domain, if you have it.
             source: "https://github.com/paytonjewell", // this should be a link to the **repository** of the project, where the code is hosted.
             image: mock1
         },
         {
-            title: "Project 2",
-            live: "https://paytonpierce.dev",
-            source: "https://github.com/paytonjewell",
+            title: "Ethnos",
+            live: "https://jhonatancarreazo.github.io/Ethnos/",
+            source: "https://github.com/jhonatancarreazo/Ethnos.git",
             image: mock2
         },
         {
-            title: "Project 3",
-            live: "https://paytonpierce.dev",
-            source: "https://github.com/paytonjewell",
+            title: "Landing page profesional",
+            live: "https://landing-asistente.vercel.app/",
+            source: "https://github.com/jhonatancarreazo/landing_page_profesional",
             image: mock3
         },
         {
