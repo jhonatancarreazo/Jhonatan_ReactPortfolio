@@ -5,6 +5,7 @@ import mock3 from "../img/mock3.png"
 import mock4 from "../img/mock4.webp"
 import mock5 from "../img/mock5.webp"
 import mock6 from "../img/mock6.webp";
+import mock6 from "../img/mock7.webp";
 
 /* Hi there! Thanks for checking out my portfolio template. Be sure to read the comments to get a better understanding of
 how to make this template work best for you! */
@@ -126,6 +127,12 @@ export const info = {
             live: "https://gisecassiani.vercel.app/",
             source: "https://github.com/JhonatanCarreazo/postafolio-gise", 
             image: mock6
-},
+        },
+        {
+            title: "Moon Window Cleaning Services",
+            live: "https://jhonatancarreazo.github.io/moon-windows/moon-windows-v2/",
+            source: "https://github.com/jhonatancarreazo/moon-windows/tree/main/moon-windows-v2", 
+            image: mock7
+        },
     ]
 }
