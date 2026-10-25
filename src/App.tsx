@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { WhatsAppConfigBar } from './components/WhatsAppConfigBar';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { ServicesSection } from './components/ServicesSection';
@@ -26,8 +25,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-emerald-500/30 selection:text-emerald-200">
-      {/* Dynamic contact test bar */}
-      <WhatsAppConfigBar onPhoneChange={handlePhoneChange} />
+
 
       {/* Main Top Navigation */}
       <Navbar currentPhone={currentPhone} />
