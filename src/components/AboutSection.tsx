@@ -39,7 +39,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ currentPhone }) => {
 
             <div className="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
               <p>
-                Soy un Desarrollador Frontend radicado en <strong className="text-white font-medium">Cartagena de Indias, Colombia</strong>. Mi formación combina conocimientos sólidos en desarrollo web con una trayectoria técnica en la industria corporativa (incluyendo experiencia comprobable en empresas de alta exigencia como <strong className="text-white font-medium">Tenaris</strong>).
+                Soy un Desarrollador Frontend radicado en <strong className="text-white font-medium">Cartagena de Indias, Colombia</strong>. Mi formación combina conocimientos sólidos en desarrollo web con una trayectoria técnica en la industria corporativa. 
               </p>
 
               <p>
