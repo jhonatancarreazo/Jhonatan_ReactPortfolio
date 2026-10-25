@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-width=1.0">
+    
+    <!-- SEO Básico y Metadatos -->
+    <title>Jhonatan Carreazo | Desarrollo Web para Negocios en Cartagena y Colombia</title>
+    <meta name="description" content="Diseño y desarrollo de páginas web profesionales, landing pages y catálogos digitales para negocios. Convierte visitantes en clientes. Cotiza hoy.">
+    <meta name="keywords" content="desarrollo web cartagena, paginas web colombia, crear sitio web negocio, freelance frontend, landing pages">
+    <meta name="author" content="Jhonatan Carreazo">
+    
+    <!-- Open Graph para compartir en redes sociales/WhatsApp -->
+    <meta property="og:title" content="Jhonatan Carreazo | Desarrollo Web Comercial">
+    <meta property="og:description" content="Páginas web rápidas y optimizadas para conseguir clientes directamente en tu WhatsApp.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jhonatancarreazo.dev/">
+    
+    <style>
+        /* ==========================================================================
+           VARIABLES Y RESET
+           ========================================================================== */
+        :root {
+            --color-primary: #0f172a; /* Slate 900 - Textos principales */
+            --color-secondary: #334155; /* Slate 700 - Textos secundarios */
+            --color-accent: #2563eb; /* Blue 600 - Enlaces y detalles */
+            --color-whatsapp: #25D366; /* Verde WhatsApp - CTA principal */
+            --color-whatsapp-hover: #128C7E;
+            --color-bg: #ffffff;
+            --color-surface: #f8fafc; /* Slate 50 - Fondos de sección */
+            --color-border: #e2e8f0;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --transition: all 0.3s ease;
+            --container-width: 1100px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: var(--color-primary);
+            background-color: var(--color-bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--color-accent);
+            transition: var(--transition);
+        }
+
+        .container {
+            width: 90%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+        }
+
+        /* ==========================================================================
+           BOTONES (CTAs)
+           ========================================================================== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .btn-whatsapp {
+            background-color: var(--color-whatsapp);
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(37, 211, 102, 0.2);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: var(--color-whatsapp-hover);
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--color-primary);
+            border: 2px solid var(--color-border);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--color-primary);
+        }
+
+        /* ==========================================================================
+           NAVEGACIÓN
+           ========================================================================== */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid var(--color-border);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        .logo span {
+            color: var(--color-accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--color-secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent);
+        }
+
+        /* Menú Móvil Hamburger */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--color-primary);
+        }
+
+        /* ==========================================================================
+           SECCIONES GENERALES
+           ========================================================================== */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--color-secondary);
+            max-width: 600px;
+            margin: 0 auto 3rem auto;
+            font-size: 1.1rem;
+        }
+
+        /* ==========================================================================
+           HERO SECTION
+           ========================================================================== */
+        .hero {
+            padding-top: 150px;
+            padding-bottom: 100px;
+            text-align: center;
+            background: linear-gradient(to bottom, var(--color-surface), var(--color-bg));
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--color-secondary);
+            max-width: 700px;
+            margin: 0 auto 2.5rem auto;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ==========================================================================
+           SERVICIOS
+           ========================================================================== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            padding: 2.5rem 2rem;
+            border-radius: var(--radius-lg);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            border-color: var(--color-accent);
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--color-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* ==========================================================================
+           PORTAFOLIO / PROYECTOS
+           ========================================================================== */
+        .portfolio {
+            background-color: var(--color-surface);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .project-card {
+            background: var(--color-bg);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            border: 1px solid var(--color-border);
+        }
+
+        .project-img-container {
+            width: 100%;
+            height: 250px;
+            background-color: #e2e8f0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Marcador de posición visual si no hay imagen */
+        .project-img-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-secondary);
+            font-size: 0.9rem;
+            background: #f1f5f9;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-content h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .project-tag {
+            display: inline-block;
+            background: var(--color-surface);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--color-secondary);
+            margin-bottom: 1rem;
+            border: 1px solid var(--color-border);
+        }
+
+        .project-content p {
+            color: var(--color-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* ==========================================================================
+           SOBRE MÍ Y PROCESO
+           ========================================================================== */
+        .about-process-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--color-secondary);
+        }
+
+        .process-list {
+            list-style: none;
+        }
+
+        .process-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .process-number {
+            background-color: var(--color-primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .process-content h4 {
+            margin-bottom: 0.25rem;
+        }
+
+        .process-content p {
+            color: var(--color-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* ==========================================================================
+           FAQ
+           ========================================================================== */
+        .faq {
+            background-color: var(--color-surface);
+        }
+
+        .faq-item {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            margin-bottom: 1rem;
+            padding: 1.5rem;
+        }
+
+        .faq-item h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .faq-item p {
+            color: var(--color-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* ==========================================================================
+           FOOTER Y CONTACTO FINAL
+           ========================================================================== */
+        .cta-final {
+            text-align: center;
+            padding: 100px 0;
+            background-color: var(--color-primary);
+            color: white;
+        }
+
+        .cta-final h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .cta-final p {
+            color: #94a3b8;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            background-color: var(--color-primary);
+            color: #64748b;
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid #1e293b;
+        }
+
+        /* ==========================================================================
+           MEDIA QUERIES (RESPONSIVE)
+           ========================================================================== */
+        @media (max-width: 900px) {
+            .about-process-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                border-bottom: 1px solid var(--color-border);
+                box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+                display: none; /* Oculto por defecto en móvil */
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero {
+                padding-top: 120px;
+                padding-bottom: 60px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CABECERA -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">Jhonatan<span>.dev</span></a>
+            <button class="mobile-menu-btn" id="mobile-btn">☰</button>
+            <nav class="nav-links" id="nav-links">
+                <a href="#servicios">Servicios</a>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#proceso">Mi Proceso</a>
+                <a href="#faq">Preguntas</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Páginas Web que Hacen<br>Crecer tu Negocio</h1>
+                <p>Diseño rápido, profesional y optimizado para conseguir prospectos y clientes directamente en tu WhatsApp. Desarrollado desde Cartagena para el mundo.</p>
+                <div class="hero-ctas">
+                    <!-- REEMPLAZAR '57TU_NUMERO_AQUI' POR TU NÚMERO REAL EJ: 573001234567 -->
+                    <a href="https://wa.me/57TU_NUMERO_AQUI?text=Hola%20Jhonatan,%20vengo%20de%20tu%20sitio%20web%20y%20quiero%20cotizar%20un%20proyecto." target="_blank" class="btn btn-whatsapp">
+                        Cotizar mi proyecto por WhatsApp
+                    </a>
+                    <a href="#proyectos" class="btn btn-outline">Ver mi trabajo</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICIOS -->
+        <section id="servicios">
+            <div class="container">
+                <h2 class="section-title">¿Qué puedo hacer por tu negocio?</h2>
+                <p class="section-subtitle">Soluciones digitales enfocadas en resultados reales, sin complicaciones técnicas para ti.</p>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Landing Pages (Páginas de Venta)</h3>
+                        <p>Sitios de una sola página diseñados estratégicamente para convertir visitantes en clientes. Ideal para promocionar un servicio específico, capturar correos o recibir contactos directos al instante.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Sitios Web para Negocios</h3>
+                        <p>Dale credibilidad a tu empresa con un sitio web corporativo completo. Muestra quiénes son, tus servicios en detalle, testimonios y facilita el contacto para negocios locales o consultorios.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Catálogos Digitales Livianos</h3>
+                        <p>Muestra tus productos de forma atractiva sin los altos costos de mantenimiento de una tienda virtual compleja. Tus clientes ven lo que ofreces y te hacen el pedido directamente por WhatsApp.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROYECTOS / PORTAFOLIO -->
+        <section id="proyectos" class="portfolio">
+            <div class="container">
+                <h2 class="section-title">Proyectos Destacados</h2>
+                <p class="section-subtitle">Ejemplos reales de cómo ayudo a profesionales y marcas a tener presencia digital.</p>
+                
+                <div class="projects-grid">
+                    <!-- PROYECTO 1 -->
+                    <div class="project-card">
+                        <div class="project-img-container">
+                            <!-- INSTRUCCIÓN: Si tienes una captura real, añádela aquí. Ejemplo: src="images/nuevasonrisa.jpg" -->
+                            <div class="project-img-placeholder">Captura web Consultorio Dental</div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-tag">Negocio Local / Salud</span>
+                            <h3>Consultorio Dental Nueva Sonrisa</h3>
+                            <p>Sitio web diseñado para un consultorio odontológico. El objetivo fue transmitir confianza profesional y facilitar la reserva de citas de pacientes locales mediante botones directos.</p>
+                            <a href="/Consultorio_Dental_Nueva_Sonrisa/" target="_blank" rel="noopener noreferrer">Visitar sitio en vivo →</a>
+                        </div>
+                    </div>
+
+                    <!-- PROYECTO 2 -->
+                    <div class="project-card">
+                        <div class="project-img-container">
+                            <!-- INSTRUCCIÓN: Si tienes una captura real, añádela aquí. -->
+                            <div class="project-img-placeholder">Captura Blog Gise Cassiani</div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-tag">Marca Personal / Blog</span>
+                            <h3>Blog Gise Cassiani</h3>
+                            <p>Desarrollo de un sitio web para marca personal enfocado en la lectura cómoda y navegación fluida. Optimizado para cargar rápidamente en dispositivos móviles.</p>
+                            <a href="/gise-cassiani/" target="_blank" rel="noopener noreferrer">Visitar sitio en vivo →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOBRE MÍ Y PROCESO -->
+        <section id="proceso">
+            <div class="container about-process-container">
+                <div class="about-text">
+                    <h2>Hola, soy Jhonatan Carreazo</h2>
+                    <p>Soy un Desarrollador Web Frontend radicado en Cartagena, Colombia, con experiencia en la industria tecnológica (incluyendo trayectoria técnica comprobable en empresas como Tenaris).</p>
+                    <p>Mi objetivo no es solo entregarte "código", sino construir una herramienta digital que te ayude a vender más, proyectar una imagen profesional y destacar frente a tu competencia.</p>
+                    <p>Trabajo con honestidad, cumpliendo los plazos acordados y entregando soluciones rápidas y adaptables a celulares.</p>
+                </div>
+                
+                <div class="process-wrapper">
+                    <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">Mi Proceso de Trabajo</h2>
+                    <ul class="process-list">
+                        <li class="process-item">
+                            <div class="process-number">1</div>
+                            <div class="process-content">
+                                <h4>Diagnóstico por WhatsApp</h4>
+                                <p>Me cuentas qué hace tu negocio y qué necesitas. Evaluamos si soy el profesional adecuado para ayudarte sin compromisos.</p>
+                            </div>
+                        </li>
+                        <li class="process-item">
+                            <div class="process-number">2</div>
+                            <div class="process-content">
+                                <h4>Propuesta y Estructura</h4>
+                                <p>Definimos el contenido, los textos clave y el diseño que mejor convierta a tus visitantes en clientes reales.</p>
+                            </div>
+                        </li>
+                        <li class="process-item">
+                            <div class="process-number">3</div>
+                            <div class="process-content">
+                                <h4>Desarrollo Ágil</h4>
+                                <p>Construyo tu página web utilizando tecnologías modernas para asegurar que cargue rápido en cualquier celular.</p>
+                            </div>
+                        </li>
+                        <li class="process-item">
+                            <div class="process-number">4</div>
+                            <div class="process-content">
+                                <h4>Entrega y Lanzamiento</h4>
+                                <p>Te entrego el sitio publicado, funcional y listo para que lo enlaces en tus redes sociales o tarjetas de presentación.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PREGUNTAS FRECUENTES -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <h2 class="section-title">Preguntas Frecuentes</h2>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="faq-item">
+                        <h4>¿Cuánto cuesta una página web?</h4>
+                        <p>Cada proyecto es único, pero mis servicios de Landing Pages iniciales tienen valores muy accesibles pensados para pequeños negocios (consultar por WhatsApp para cotización exacta). No cobro mensualidades ocultas por el diseño.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>¿Cuánto tardas en entregar la página?</h4>
+                        <p>Para páginas informativas o landing pages, el tiempo promedio de entrega es de 1 a 2 semanas una vez me entregues la información, fotos y logotipos de tu negocio.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>¿Qué pasa con el dominio y el hosting?</h4>
+                        <p>Te asesoro gratuitamente para comprar tu propio dominio (ej. tunegocio.com) a tu nombre, para que seas el único dueño de tu marca en internet. Para el alojamiento (hosting), ofrezco opciones de alta velocidad.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO FINAL -->
+        <section class="cta-final">
+            <div class="container">
+                <h2>¿Listo para profesionalizar tu negocio?</h2>
+                <p>Escríbeme hoy mismo y hablemos sobre cómo puedo ayudarte a captar más clientes.</p>
+                <!-- REEMPLAZAR '57TU_NUMERO_AQUI' -->
+                <a href="https://wa.me/57TU_NUMERO_AQUI?text=Hola%20Jhonatan,%20estoy%20listo%20para%20empezar%20mi%20proyecto%20web." target="_blank" class="btn btn-whatsapp" style="background: white; color: var(--color-primary);">
+                    Iniciar conversación en WhatsApp
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Jhonatan Carreazo. Todos los derechos reservados.</p>
+            <p style="font-size: 0.85rem; margin-top: 0.5rem;">Desarrollado en Cartagena, Colombia.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT PARA EL MENÚ MÓVIL Y SMOOTH SCROLL -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Lógica para abrir/cerrar el menú móvil
+            const mobileBtn = document.getElementById('mobile-btn');
+            const navLinks = document.getElementById('nav-links');
+
+            mobileBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                mobileBtn.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+            });
+
+            // Cerrar menú al hacer clic en un enlace (móvil)
+            const links = navLinks.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    mobileBtn.textContent = '☰';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
